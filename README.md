@@ -2,7 +2,7 @@
 
 **Pixelversi** is a modern, retro-inspired take on the classic game of Reversi (Othello), built with pure HTML, CSS, and JavaScript. Battle the AI, challenge a friend locally, or just vibe out to the pixel aesthetics and CRT scanlines!
 
-![Screenshot of Pixelversi board with retro scanline overlay](./screenshot.png)
+![pixelversi](https://github.com/user-attachments/assets/287d476f-8188-4fc7-893a-bdb1ad2f614b)
 
 ## Features
 
