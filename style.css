@@ -1,0 +1,152 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d0d1a; /* Dark futuristic background */
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.game-container {
+    background-color: #1a1a2e; /* Slightly lighter dark background for container */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.5); /* Cyan glow */
+    text-align: center;
+    border: 2px solid #00ffff; /* Outer glow border */
+}
+
+h1 {
+    color: #00ffff; /* Neon cyan */
+    text-shadow: 0 0 10px #00ffff;
+    margin-bottom: 20px;
+}
+
+.player-selection button,
+#new-game-btn {
+    background-color: #4a00e0; /* Purple */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(74, 0, 224, 0.7);
+}
+
+.player-selection button:hover,
+#new-game-btn:hover {
+    background-color: #6a00ff; /* Lighter purple */
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(106, 0, 255, 0.9);
+}
+
+#game-info {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #2a2a4a;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #00ffff;
+}
+
+#game-info p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+#current-player-display {
+    font-weight: bold;
+    color: #ffcc00; /* Yellow for current player */
+}
+
+#game-message {
+    font-style: italic;
+    color: #ff6666; /* Red for messages */
+}
+
+#reversi-board {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    gap: 2px;
+    background-color: #000000; /* Dark grid lines */
+    border: 3px solid #00ffff;
+    border-radius: 5px;
+    margin: 20px auto;
+    width: fit-content; /* Adjust width based on content */
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    background-color: #33334a; /* Cell background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    position: relative;
+    border: 1px solid rgba(0, 255, 255, 0.2); /* Subtle cell border */
+}
+
+.cell:hover {
+    background-color: #44446a; /* Hover effect */
+}
+
+.cell.valid-move {
+    background-color: rgba(0, 255, 255, 0.3); /* Highlight valid moves */
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+.piece {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em; /* To show potential future player initials or effects */
+}
+
+.piece.white {
+    background: radial-gradient(circle at 30% 30%, #ffffff, #e0e0e0, #cccccc);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.piece.black {
+    background: radial-gradient(circle at 30% 30%, #333333, #111111, #000000);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.scanlines {
+    pointer-events: none; /* So it doesn’t block clicks */
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%; height: 100%;
+    z-index: 100;
+    opacity: 0.28; /* Tweak for taste */
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.35) 0px,
+            rgba(0,0,0,0.35) 1.5px,
+            transparent 2px,
+            transparent 5px
+        );
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+.game-container {
+    position: relative; /* Make sure overlay stays in the right spot */
+}

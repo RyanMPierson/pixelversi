@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixelversi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="scanlines">
+        <h1>Pixelversi</h1>
+        <div class="player-selection">
+            <button id="play-white-btn">Play as White</button>
+            <button id="play-black-btn">Play as Black</button>
+        </div>
+        <div id="game-info">
+            <p>Current Turn: <span id="current-player-display"></span></p>
+            <p>White Score: <span id="white-score">2</span> | Black Score: <span id="black-score">2</span></p>
+            <p id="game-message"></p>
+        </div>
+        <div id="reversi-board">
+        </div>
+        <button id="new-game-btn">New Game</button>
+        </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
